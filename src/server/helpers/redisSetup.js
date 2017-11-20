@@ -1,7 +1,7 @@
 const url = require('url')
 const redis = require('redis')
 
-const redisUrl = url.parse('redis://redistogo:c63877801bb8b1b117b7d6cf50f93d7c@jack.redistogo.com:11753/')
+const redisUrl = url.parse
 const redisAuth = redisUrl.auth.split(':') || null
 const redisPort = redisUrl.port || 6379
 const redisHost = redisUrl.hostname || '127.0.0.1'
