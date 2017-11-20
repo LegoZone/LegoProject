@@ -1,0 +1,22 @@
+{{>navbar}}
+<article>
+  <div class="pa2">
+    <div class="fl w-50 w-25-m w-20-l pa2" id="monkey" class="pointer">
+      <a href="/monkey">
+      <img src="/img/drummymonkey.jpeg" class="pointer w-100 db outline black-10"/>
+    </a>
+    <h1>{{pname}}</h1>
+    {{#each packages}}
+      <dl class="mt2 f6 lh-copy">
+        <dt class="clip">Title</dt>
+        <dd class="ml0 black truncate w-100 tc grow f4 hover-green">{{this.name}}</dd>
+      </dl>
+      <form action="/lego" method="GET">
+        <input  class="" type="hidden" name="name" value="{{this.name}}"/>
+        <input  class="" type="hidden" name="length" value="{{this.length}}"/>
+        <input  class="" type="submit" value="start"/>
+      </form>
+      {{/each}}
+    </div>
+  </div>
+</article>

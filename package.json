@@ -1,0 +1,27 @@
+{
+  "name": "legoworld",
+  "version": "1.0.0",
+  "description": "3d lego world ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server/start_server",
+    "dev": "nodemon src/server/start_server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Esraa Jbara",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.112.0",
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.0",
+    "connect-redis": "^3.3.2",
+    "env2": "^2.2.0",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "mongoose": "^4.12.4",
+    "pg": "^7.3.0",
+    "redis": "^2.8.0",
+    "serve-favicon": "^2.4.5"
+  }
+}
