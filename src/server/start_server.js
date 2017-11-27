@@ -1,5 +1,5 @@
-const server = require('./server.js').server
+const server = require('./server.js').server;
 
-server.listen(9000, function(){
+server.listen(process.env.PORT || 9000, () => {
   console.log('listening on :9000');
-})
+});

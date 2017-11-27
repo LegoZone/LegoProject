@@ -1,1 +1,0 @@
-var onError = function ( xhr ) {}

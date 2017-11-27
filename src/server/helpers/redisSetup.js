@@ -1,39 +1,37 @@
-const url = require('url')
-const redis = require('redis')
+const url = require('url');
+const redis = require('redis');
 
-const redisUrl = url.parse
-const redisAuth = redisUrl.auth.split(':') || null
-const redisPort = redisUrl.port || 6379
-const redisHost = redisUrl.hostname || '127.0.0.1'
-const redisDb = redisAuth[0] || null
-const redisPass = redisAuth[1] || null
+const redisUrl = url.parse;
+const redisAuth = redisUrl.auth.split(':') || null;
+const redisPort = redisUrl.port || 6379;
+const redisHost = redisUrl.hostname || '127.0.0.1';
+const redisDb = redisAuth[0] || null;
+const redisPass = redisAuth[1] || null;
 
-var onError = function (error) {
-	console.error('Error in Redis client: ' + error.message);
-	console.error(error.stack);
-	console.log('Exiting now because of error in Redis client');
+var onError = function(error) {
+  console.error('Error in Redis client: ' + error.message);
+  console.error(error.stack);
+  console.log('Exiting now because of error in Redis client');
   // Our app doesn't work without DB. Exit.
   process.exit(1);
 };
 
-var onConnect =  function () {
-	console.log('Successfully connected to Redis ' + redisHost + ':' + redisPort);
+var onConnect = function() {
+  console.log('Successfully connected to Redis ' + redisHost + ':' + redisPort);
 };
 
 var redisClient = redis.createClient(redisPort, redisHost, {
-	password: redisPass
+  password: redisPass
 });
 redisClient.on('error', onError);
 redisClient.on('connect', onConnect);
 
-module.exports = redisClient
-
+module.exports = redisClient;
 
 // const session = require('express-session')
 
-
 // RedisStore = require('connect-redis')(session)
-// module.exports.RedisStore = RedisStore 
+// module.exports.RedisStore = RedisStore
 
 // console.log('redistogo', process.env.REGION)
 
