@@ -1,4 +1,5 @@
 const AWS = require('aws-sdk');
+require('env2')('config.env');
 
 AWS.config.region = process.env.REGION;
 AWS.config.accessKeyId = process.env.ACCESSKEYID;
