@@ -1,6 +1,6 @@
 const packagesSchema = require('../model/schema.js').legoPack;
 
-const fetchPackages = res => {
+function fetchPackages(res) {
   const findAll = packagesSchema
     .find({})
     .exec()
@@ -8,7 +8,7 @@ const fetchPackages = res => {
       res.render('packages', { packages: packs });
     })
     .catch(err => err);
-};
+}
 
 module.exports = (req, res) => {
   fetchPackages(res);
