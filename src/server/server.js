@@ -3,13 +3,9 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const bodyParser = require('body-parser');
 const hbs = require('express-handlebars');
-const server = express();
 const router = require('./routes/index.js');
-const runDB = require('./database/run_database.js');
 
-runDB();
-
-server.set('port', process.env.PORT || 9000);
+const server = express();
 
 server.use(favicon(path.join(__dirname, '..', 'client', 'img', 'favicon.ico')));
 

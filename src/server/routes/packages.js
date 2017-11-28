@@ -1,4 +1,4 @@
-const packagesSchema = require('../model/schema.js');
+const packagesSchema = require('../model/schema.js').legoPack;
 
 const fetchPackages = res => {
   const findAll = packagesSchema
