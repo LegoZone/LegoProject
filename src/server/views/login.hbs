@@ -1,19 +1,18 @@
 {{> navbar}}
-<div class="flex items-center justify-center flex-column w-100">
+<div class="flex justify-center w-100">
 
-  {{#if error}}
-  <span class="mt1 red">{{error}}</span>
-  {{/if}}
-
-  <form action="/login" method="post" class="w-100 flex items-center justify-center flex-column">
+  <form action="/login" method="post" class="flex items-center justify-center flex-column">
+    {{#if error}}
+    <span class="mt1 ba br1 tc pa1 w-100 {{#if success}}green{{else}}red{{/if}}">{{error}}</span>
+    {{/if}}
     <label>
       Username:
-      <input type="text" name="username" class="mt4" required>
+      <input type="text" name="username" class="mt4 br1" required>
     </label>
 
     <label>
       Password:
-      <input type="password" name="password" class="mt4" required>
+      <input type="password" name="password" class="mt4 br1 " required>
     </label>
 
     <input type="submit" class="mt4">
