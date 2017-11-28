@@ -4,6 +4,8 @@ const favicon = require('serve-favicon');
 const bodyParser = require('body-parser');
 const hbs = require('express-handlebars');
 const router = require('./routes/index.js');
+const cookieParser = require('cookie-parser');
+const compression = require('compression');
 
 const server = express();
 
@@ -12,6 +14,8 @@ server.use(favicon(path.join(__dirname, '..', 'client', 'img', 'favicon.ico')));
 server.use(express.static(path.join(__dirname, '..', 'client')));
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
+server.use(cookieParser());
+server.use(compression());
 
 server.engine(
   'hbs',
